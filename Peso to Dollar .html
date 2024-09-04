@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peso to Dollar Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa; /* Very light blue */
+            color: #333; /* Dark text color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #ffffff; /* White background */
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        input[type="number"] {
+            padding: 10px;
+            border: 1px solid #00bcd4; /* Cyan border */
+            border-radius: 4px;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        p {
+            font-size: 16px;
+            margin-top: 10px;
+            color: #00bcd4; /* Cyan text color */
+        }
+    </style>
+    <script>
+        function convertPesoToDollar() {
+            // Exchange rate (example value, you may need to update it)
+            const exchangeRate = 0.018; // 1 Peso = 0.018 Dollar
+
+            // Get the value from the input field
+            const pesoAmount = parseFloat(document.getElementById('peso').value);
+
+            // Perform the conversion
+            const dollarAmount = pesoAmount * exchangeRate;
+
+            // Display the result
+            document.getElementById('result').innerText = `Equivalent in Dollars: $${dollarAmount.toFixed(2)}`;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Peso to Dollar Converter</h1>
+        <label for="peso">Amount in Pesos:</label>
+        <input type="number" id="peso" placeholder="Enter amount" oninput="convertPesoToDollar()">
+        <p id="result">Equivalent in Dollars: $0.00</p>
+    </div>
+</body>
+</html>
